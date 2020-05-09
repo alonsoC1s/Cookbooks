@@ -1,0 +1,34 @@
+\documentclass[12pt, spanish]{article}
+\usepackage{quattrocento}
+\usepackage[showframe,landscape, margin=1cm]{geometry}
+\usepackage[spanish, mexico]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{/Users/alonsomartinez/Documents/Projects/cookbooks/styles}
+\usepackage{fancyvrb}
+
+\definecolor{mainClr}{RGB}{0, 46, 127}
+
+\title{Regex Cookbook}
+\author{}
+\date 
+
+\begin{document}
+\begin{center}{\color{mainClr}{\huge{\textbf{Regex Cookbook}}}}\\
+\end{center}
+
+\begin{multicols*}{3}
+
+\begin{roundbox}{Remueve \Verb!\textbackslash n! entre oraciones}
+    Pattern: \Verb=(?<![\textbackslash n.?!]"|[\textbackslash n.?!])\textbackslash n+=
+
+    Replace: \Verb=space=
+\end{roundbox}
+
+\begin{roundbox}{Una oración por linea}
+    Pattern: \Verb|(?<=[!?.])(?=\textbackslash s*[A-Z])\textbackslash s*|
+
+    Replace: \Verb|\textbackslash n|
+\end{roundbox}
+
+\end{multicols*} 
+\end{document}
